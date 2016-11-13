@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="cc.yfree.yangf.everyday.MapActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/map_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_map_edit"
+        android:hint="输入你的目的地"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:drawableLeft="@drawable/ic_map_dehaze"
+        android:drawableRight="@drawable/ic_clear"
+        android:drawablePadding="24dp"
+        android:elevation="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:padding="14dp"
+        android:textSize="16sp"/>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/mapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"></com.baidu.mapapi.map.MapView>
+
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:visibility="invisible"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:elevation="20dp"
+        android:layout_alignBottom="@+id/mapView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ttt">
+            <TextView
+                android:id="@+id/poiName"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="18dp"
+                android:text="地名"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="18dp"
+                android:text="  "/>
+            <TextView
+                android:id="@+id/poiDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="12dp"
+                android:text="距离"
+                android:layout_below="@+id/poiName"/>
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/poiDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:layout_marginBottom="8dp"
+            android:textSize="14dp"
+            android:text="详情"
+            android:layout_below="@+id/ttt"/>
+
+        <LinearLayout
+            android:id="@+id/button_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poiDetail">
+
+            <!--<com.mikepenz.iconics.view.IconicsImageView-->
+                <!--android:id="@+id/quick1"-->
+                <!--android:layout_width="16dp"-->
+                <!--android:layout_height="16dp"-->
+                <!--app:iiv_color="@color/icon"-->
+                <!--app:iiv_icon="faw-taxi" />-->
+            <com.mikepenz.iconics.view.IconicsButton
+                android:textSize="14dp"
+                android:textColor="@color/primary_text"
+                android:text="{faw_taxi}   去 这 里"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toThere"
+                android:layout_weight="1"
+                style="@style/carbon_Button"/>
+
+            <com.mikepenz.iconics.view.IconicsButton
+                android:textSize="14dp"
+                android:textColor="@color/divider"
+                android:text="{cmd_map_marker_radius}   搜 周 边"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:id="@+id/nearBy"
+                android:layout_weight="1"
+                style="@style/carbon_Button"/>
+
+
+            <com.mikepenz.iconics.view.IconicsButton
+                android:textSize="14dp"
+                android:textColor="@color/divider"
+                android:text="{cmd_format_list_bulleted}   详 情"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detail"
+                android:layout_weight="1"
+                android:clickable="false"
+                style="@style/carbon_Button"/>         <!--矢量图-->
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/inputDialog"
+    android:padding="16dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue"></View>
+    <EditText
+        android:layout_gravity="top"
+        android:id="@+id/content"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:background="@null"/>
+</LinearLayout>
+
